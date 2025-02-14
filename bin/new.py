@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Author : Ken Youens-Clark <kyclark@gmail.com>
+Author : Julia Misemer <jkmisemer@arizona.edu>
 Purpose: Python program to write a Python program
 """
 
@@ -192,3 +192,7 @@ def get_defaults():
 # --------------------------------------------------
 if __name__ == '__main__':
     main()
+
+%cd ~/be434-Spring2025/assignments/02_divide
+!../../bin/new.py -p 'Divide two numbers' divide.py
+    
