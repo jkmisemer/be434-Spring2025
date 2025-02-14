@@ -192,7 +192,6 @@ def get_defaults():
 # --------------------------------------------------
 if __name__ == '__main__':
     main()
-
 %cd ~/be434-Spring2025/assignments/02_divide
 !../../bin/new.py -p 'Divide two numbers' divide.py
     
