@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Author : Julia Misemer <jkmisemer@arizona.edu>
-Date   : 2025-02-13
-Purpose: Add Your Purpose
+Author : Julia <Add your email>
+Date   : 2025-04-24
+Purpose: Divide some numbers
 """
 
 import argparse
@@ -10,46 +10,36 @@ import argparse
 
 # --------------------------------------------------
 def get_args():
-                    """Get command-line arguments"""
+    """Get command-line arguments"""
 
-                    parser = argparse.ArgumentParser(
-                        description='Add Your Purpose',
-                        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(
+        description='Divide some numbers',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-                    parser.add_argument('items',
-                                        metavar='str',
-                                        nargs = +
-                                        help='Items we are bringing')
+    parser.add_argument('numbers',
+                        metavar='str',
+                        nargs=2,
+                        type=int,
+                        help='Numbers to divide')
 
-                   
-
-                    parser.add_argument('-s',
-                                        '--sorted',
-                                        help='Whether to sort the items',
-                                        action='store_true')
-
-                    return parser.parse_args()
+    args = parser.parse_args()
+    if args.numbers[1] == 0:
+        parser.error(f"Cannot divide by zero, dum-dum!")
+    
+    return args
 
 
 # --------------------------------------------------
 def main():
-                    """Make a jazz noise here"""
+    """Make a jazz noise here"""
 
-                    args = get_args()
-                    str_arg = args.arg
-                    int_arg = args.int
-                    file_arg = args.file
-                    flag_arg = args.on
-                    pos_arg = args.positional
-
-                    print(f'str_arg = "{str_arg}"')
-                    print(f'int_arg = "{int_arg}"')
-                    print('file_arg = "{}"'.format(
-                        file_arg.name if file_arg else ''))
-                    print(f'flag_arg = "{flag_arg}"')
-                    print(f'positional = "{pos_arg}"')
-
+    args = get_args()
+    numbers = args.numbers
+    n1=numbers[0]
+    n2=numbers[1]
+    result = int(n1/n2)
+    print(f'{n1} / {n2} = {result}')
 
 # --------------------------------------------------
 if __name__ == '__main__':
-                    main()
+    main()
